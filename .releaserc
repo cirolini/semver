@@ -1,0 +1,28 @@
+{
+  "name": "semver",
+  "branches": [
+    "main"
+  ],
+  "version": "0.0.0-development",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aziontech/semver.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^19.0.2"
+  },
+  "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        ["semantic-release-pypi", {
+          "pypiPublish": false
+          }],
+        "@semantic-release/github",
+        ["@semantic-release/git", {
+          "assets": ["CHANGELOG.md", "setup.py", "setup.cfg"]
+          }]
+    ]
+}
